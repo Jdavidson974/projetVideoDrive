@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BuyList } from "src/commandes/entities/buyList.entity";
+import { Commande } from "src/commandes/entities/commande.entity";
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Produit {
@@ -12,4 +14,8 @@ export class Produit {
     price: number;
     @Column()
     description: string;
+
+    @ManyToMany(() => BuyList, (commande) => commande.produits)
+    commandes: BuyList[];
+
 }

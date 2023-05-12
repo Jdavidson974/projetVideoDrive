@@ -20,7 +20,10 @@ export class CommandesService {
               );
               console.log(products);
               //FAIRE LE FIND POUR TROUVER LES 
-              // PRODUIT AVEC IN ET LES LIER A LA NOUVELLE COMMANDE EN PLUS DU CLIEN
+              // PRODUIT AVEC IN
+              // + CREE CLIENT 
+              // + CREER NEW COMMANDE 
+              // + LIER LE TOUT
               return session;
             }
           )

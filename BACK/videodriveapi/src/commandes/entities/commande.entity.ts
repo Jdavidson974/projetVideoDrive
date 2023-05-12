@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Produit } from "src/produits/entities/produit.entity";
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BuyList } from "./buyList.entity";
 
 @Entity()
 export class Commande {
@@ -11,4 +13,7 @@ export class Commande {
         default: () => 'NOW()',
     })
     buyTime: Date
+
+    @ManyToMany(() => BuyList, (buyList) => buyList.commandes)
+    commandes: BuyList[];
 }
