@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Commande } from "src/commandes/entities/commande.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Client {
@@ -14,4 +15,7 @@ export class Client {
 
     @Column({ unique: true })
     email: string;
+
+    @OneToMany(() => Commande, (commandes) => commandes.client)
+    commandes: Commande[]
 }
