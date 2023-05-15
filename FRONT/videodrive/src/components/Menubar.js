@@ -8,7 +8,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 const Menubar = () => {
   return (
     <>
-      <div class="menubar">
+      <div className="menubar">
         {["md"].map((expand) => (
           <Navbar key={expand} expand={expand} className="mb-3 menunavbar">
             <Container fluid>
