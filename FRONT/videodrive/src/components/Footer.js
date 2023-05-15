@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
             <div className="separator"></div>
             <div className="copyright">
-                © Copyright 2022, All Rights Reserved by ClarityUI
+                © Copyright 2022,
             </div>
             <div className="social-link">
                 <div className="social-logo-container">
