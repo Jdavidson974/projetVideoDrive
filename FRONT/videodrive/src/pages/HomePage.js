@@ -1,14 +1,25 @@
-import ApiService from "../services/ApiService";
+import Card from "../components/Card";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
-const axios = new ApiService();
-
-// axios.getData("a").then(
-//   a => console.log(a)
-// )
 const HomePage = () => {
+  let [games, setGames] = useState([]);
+  const fetchAllGame = () => {
+    axios.get("http://localhost:3000/produits").then(
+      games => {
+        if (games) {
+          setGames(games.data.data);
+        } else {
+          setGames([]);
+        }
+      }
+    );
+  }
+  useEffect(fetchAllGame, []);
   return (
-    <div>
-      toto
+    <div className="card-container">
+      <h2></h2>
+      {games.map((data, index) => <Card key={index} data={data} />)}
     </div>
   );
 };
