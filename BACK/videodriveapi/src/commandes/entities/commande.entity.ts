@@ -16,7 +16,7 @@ export class Commande {
     buyTime: Date
 
     @ManyToMany(() => BuyList, (buyList) => buyList.commandes)
-    commandes: BuyList[];
+    buyList: BuyList[];
 
     @ManyToOne(() => Client, (client) => client.commandes)
     client: Client;

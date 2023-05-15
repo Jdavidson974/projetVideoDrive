@@ -4,9 +4,11 @@ import { CommandesController } from './commandes.controller';
 import { Commande } from './entities/commande.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BuyList } from './entities/buyList.entity';
+import { Client } from 'src/clients/entities/client.entity';
+import { Produit } from 'src/produits/entities/produit.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Commande, BuyList])],
+  imports: [TypeOrmModule.forFeature([Commande, BuyList, Client, Produit])],
   controllers: [CommandesController],
   providers: [CommandesService]
 })

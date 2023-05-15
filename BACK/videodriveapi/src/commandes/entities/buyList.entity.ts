@@ -1,5 +1,5 @@
 import { Produit } from "src/produits/entities/produit.entity";
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Commande } from "./commande.entity";
 
 @Entity()
@@ -11,11 +11,12 @@ export class BuyList {
     @Column()
     quantite: number;
 
-    @ManyToMany(() => Produit, (produits) => produits.commandes)
+    @ManyToOne(() => Produit, (produits) => produits.commandes)
     @JoinTable()
-    produits: Produit[];
+    produits: Produit;
 
-    @ManyToMany(() => Commande, (commandes) => commandes.commandes)
+
+    @ManyToMany(() => Commande, (commandes) => commandes.buyList)
     @JoinTable()
     commandes: Commande[];
 }
