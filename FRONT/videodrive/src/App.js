@@ -1,11 +1,22 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import Menubar from "./components/Menubar";
+import Footer from "./components/Footer";
+import DetailPage from "./pages/DetailPage";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-      </Routes>
+      <div>
+        <Menubar />
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/detail" element={<DetailPage />}></Route>
+          </Routes>
+        </div>
+        <Footer></Footer>
+      </div>
+
     </BrowserRouter>
   );
 }
