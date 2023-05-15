@@ -1,11 +1,5 @@
-
-
 const DetailPage = () => {
-    return (
-        <div>
-            kejfvqlhekj
-        </div>
-    );
+  return <div></div>;
 };
 
 export default DetailPage;
