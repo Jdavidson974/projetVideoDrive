@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Menubar />
-        <div className="container">
+        <div className="container wrap">
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/detail" element={<DetailPage />}></Route>
@@ -16,7 +16,6 @@ function App() {
         </div>
         <Footer></Footer>
       </div>
-
     </BrowserRouter>
   );
 }
