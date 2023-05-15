@@ -1,7 +1,12 @@
+import Footer from "../components/Footer";
 
 const HomePage = () => {
     return (
-        <p>TOTO</p>
+        <div>
+            <div className="container">
+            </div>
+            <Footer></Footer>
+        </div>
     );
 };
 
