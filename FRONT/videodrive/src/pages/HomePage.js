@@ -1,8 +1,9 @@
+// import Menubar from "../components/Menubar";
+
+import Menubar from "../components/Menubar";
 
 const HomePage = () => {
-    return (
-        <p>TOTO</p>
-    );
+  return <Menubar />;
 };
 
 export default HomePage;
