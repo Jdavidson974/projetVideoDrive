@@ -16,8 +16,8 @@ export class ProduitsService {
     return this.stripe.products.list({ expand: ['data.default_price'] });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} produit`;
+  findOne(idProduct: string) {
+    return this.stripe.products.retrieve(idProduct, { expand: ['data.default_price'] });;
   }
 
 }
