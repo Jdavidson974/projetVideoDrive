@@ -1,16 +1,29 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const DetailPage = () => {
-  const fetchDetail = () => {
+  let [myObject, setObject] = useState([]);
+  const fetchDetails = () => {
     axios
-      .get("http://localhost:3000/produits/" + "prod_NsfOws6OtkClCk")
-      .then((detailFilm) => {
-        console.log(detailFilm);
+      .get(`http://localhost:3000/produits/prod_NsfOws6OtkClCk`)
+      .then((detail) => {
+        setObject(detail.data);
       });
   };
-  useEffect(fetchDetail, []);
-  return <div>toto</div>;
+  useEffect(fetchDetails, [myObject]);
+
+  return (
+    <div className="card-jeux">
+      <div className="card-info">
+        <div>{/* <img src={myObject.images[0]} alt="" /> */}</div>
+        <div>
+          <span>{myObject.name}</span>
+          <span>{myObject.prix.unit_amount_decimal} Euro</span>
+        </div>
+      </div>
+      <div className="card-synopsi">Resumer</div>
+    </div>
+  );
 };
 
 export default DetailPage;
