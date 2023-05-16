@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { useParams } from "react-router";
 const DetailPage = () => {
+  const { id } = useParams();
   let [myObject, setObject] = useState();
   const fetchDetails = () => {
     axios
-      .get(`http://localhost:3000/produits/prod_NsfOws6OtkClCk`)
+      .get(`http://localhost:3000/produits/${id}`)
       .then((detail) => {
         setObject(detail.data);
       });
