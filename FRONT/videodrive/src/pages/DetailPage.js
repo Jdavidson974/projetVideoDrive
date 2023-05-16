@@ -10,7 +10,7 @@ const DetailPage = () => {
         setObject(detail.data);
       });
   };
-  useEffect(fetchDetails, [myObject]);
+  useEffect(fetchDetails, []);
 
   if (!myObject) {
     return null

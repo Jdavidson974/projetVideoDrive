@@ -30,7 +30,7 @@ export class ProduitsService {
                 let prixParsed = ',' + prixParse.substring(prixParse.length - 2);
                 prixParsed = prixParse.substring(0, prixParse.length - 2) + prixParsed;
                 price.unit_amount_decimal = prixParsed;
-                const produit = { ...product, prix: price, description: produitDB.description }
+                const produit = { ...product, prix: price, }
                 return produit;
               }
             )
