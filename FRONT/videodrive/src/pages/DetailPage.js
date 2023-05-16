@@ -22,9 +22,17 @@ const DetailPage = () => {
     return null;
   }
   // console.log(myObject);
+
   return (
     myObject && (
       <div className="card-jeux">
+        <script>
+          {
+            (document.body.style.backgroundImage =
+              "url(" + myObject.backgroundImg + ")")
+          }
+        </script>
+        <script>{(document.body.style.backgroundRepeat = "no-repeat")}</script>
         <div className="card-info">
           <img src={myObject.images[0]} alt="" />
           <div className="jeux-detail">
