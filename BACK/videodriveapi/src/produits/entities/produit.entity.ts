@@ -14,6 +14,8 @@ export class Produit {
     price: number;
     @Column()
     description: string;
+    @Column({ nullable: true })
+    backgroundImg: string
 
     @OneToMany(() => BuyList, (commande) => commande.produits)
     commandes: BuyList[];

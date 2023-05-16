@@ -7,9 +7,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CategoriesModule } from './categories/categories.module';
 import { ClientsModule } from './clients/clients.module';
 import { CommandesModule } from './commandes/commandes.module';
-
+import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
+import { join } from 'path';
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), TypeOrmModule.forRoot({
+  imports: [ServeStaticModule.forRoot({
+    rootPath: join(__dirname, '..', 'file'),
+  }), ConfigModule.forRoot({ isGlobal: true }), TypeOrmModule.forRoot({
     type: 'mysql',
     host: process.env.DB_HOST,
     port: +process.env.DB_PORT,
