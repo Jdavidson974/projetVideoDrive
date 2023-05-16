@@ -26,6 +26,10 @@ export class ProduitsService {
           product => {
             return this.stripe.prices.retrieve(product.default_price.toString()).then(
               price => {
+                const prixParse = price.unit_amount_decimal;
+                let prixParsed = ',' + prixParse.substring(prixParse.length - 2);
+                prixParsed = prixParse.substring(0, prixParse.length - 2) + prixParsed;
+                price.unit_amount_decimal = prixParsed;
                 const produit = { ...product, prix: price, description: produitDB.description }
                 return produit;
               }
