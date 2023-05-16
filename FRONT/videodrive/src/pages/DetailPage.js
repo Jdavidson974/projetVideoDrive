@@ -19,22 +19,13 @@ const DetailPage = () => {
     myObject && (
       <div className="card-jeux">
         <div className="card-info">
-          <div>
-            <img src={myObject.images[0]} alt="" />
-          </div>
-          <div>
-            <span>{myObject.name}</span>
-            <span>{myObject.prix.unit_amount_decimal} Euro</span>
-          </div>
+          <img src={myObject.images[0]} alt="" />
+          <span>{myObject.name}</span>
+          <span>{myObject.prix.unit_amount_decimal} Euro</span>
         </div>
         <div className="card-synopsi">
           <h4>Resumer</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio
-            porro voluptate aperiam, placeat quisquam mollitia quod? Sed quam ex
-            debitis earum! Delectus, sit. Necessitatibus commodi perferendis
-            aperiam earum molestias?
-          </p>
+          <p>{myObject.description}</p>
         </div>
       </div>
     )

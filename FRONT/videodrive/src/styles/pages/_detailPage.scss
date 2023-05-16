@@ -2,12 +2,25 @@
     display: flex;
     flex-direction: row; 
     align-items: center;
+    justify-content: center;
     height: 60vh;
 }
 .card-info{
-    width: 35%;
+    display: flex;
+    flex-direction: column;
+    width: 35vh;
+    padding: 5vh;
 }
 .card-synopsi{
-    width: 65%;
-    
+    width: 65vh;
+    padding: 5vh;
+}
+span{
+    padding: 1vh;
+}
+
+@media(max-width: 768px){
+    .card-synopsi{
+        font-size: x-small;
+    }
 }
