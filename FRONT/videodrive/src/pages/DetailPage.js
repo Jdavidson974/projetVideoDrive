@@ -11,7 +11,6 @@ const DetailPage = () => {
       });
   };
   useEffect(fetchDetails, []);
-  console.log(myObject);
   if (!myObject) {
     return null;
   }
