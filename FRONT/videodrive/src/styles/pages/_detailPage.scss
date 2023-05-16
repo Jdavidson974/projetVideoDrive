@@ -1,6 +1,13 @@
 .card-jeux{
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
+    align-items: center;
+    height: 60vh;
 }
-.card-info{}
-.card-synopsi{}
+.card-info{
+    width: 35%;
+}
+.card-synopsi{
+    width: 65%;
+    
+}
