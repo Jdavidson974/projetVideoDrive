@@ -5,11 +5,9 @@ const DetailPage = () => {
   const { id } = useParams();
   let [myObject, setObject] = useState();
   const fetchDetails = () => {
-    axios
-      .get(`http://localhost:3000/produits/${id}`)
-      .then((detail) => {
-        setObject(detail.data);
-      });
+    axios.get(`http://localhost:3000/produits/${id}`).then((detail) => {
+      setObject(detail.data);
+    });
   };
   useEffect(fetchDetails, []);
   if (!myObject) {
@@ -21,8 +19,15 @@ const DetailPage = () => {
       <div className="card-jeux">
         <div className="card-info">
           <img src={myObject.images[0]} alt="" />
-          <span>{myObject.name}</span>
-          <span>{myObject.prix.unit_amount_decimal} Euro</span>
+          <div className="jeux-detail">
+            <span>{myObject.name}</span>
+            <span>{myObject.prix.unit_amount_decimal}€</span>
+            <span>En Stock</span>
+          </div>
+          <div className="btn-container">
+            <button className="btn btn-success">Ajouter au panier</button>
+            <button className="btn btn-info">Achat Maintenant</button>
+          </div>
         </div>
         <div className="card-synopsi">
           <h4>Resumer</h4>

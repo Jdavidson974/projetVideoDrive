@@ -8,19 +8,55 @@
 .card-info{
     display: flex;
     flex-direction: column;
-    width: 35vh;
-    padding: 5vh;
+    width: 50vh;
+    padding: 2vh;
+    background: #facc02d5;
+    border-radius: 2vh;
+    box-shadow: 2px 2px 2px black;
 }
 .card-synopsi{
-    width: 65vh;
-    padding: 5vh;
+    width: 50vh;
+    padding: 2vh;
+    background:  #facc02d5;
+    border-radius: 2vh;
+    box-shadow: 2px 2px 2px black;
+    margin-left: 2vh;
 }
-span{
-    padding: 1vh;
+
+img{
+    box-shadow: 6px 6px 6px black;
+}
+
+.jeux-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+
+    
+
+}
+.btn{
+    box-shadow: 2px 2px 2px black;
+    color: beige;
 }
 
 @media(max-width: 768px){
     .card-synopsi{
         font-size: x-small;
+    }
+    .card-info{
+        width: 35vh;
+    }
+
+    .btn {
+        font-size: 1.1vh;
+    
     }
 }
