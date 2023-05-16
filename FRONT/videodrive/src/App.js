@@ -11,7 +11,7 @@ function App() {
         <div className="container wrap">
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
-            <Route path="/detail" element={<DetailPage />}></Route>
+            <Route path="/detail/:id" element={<DetailPage />}></Route>
           </Routes>
         </div>
         <Footer></Footer>
