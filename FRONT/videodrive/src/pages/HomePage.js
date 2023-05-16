@@ -18,7 +18,7 @@ const HomePage = () => {
   useEffect(fetchAllGame, []);
   return (
     <div className="card-container">
-      <h2></h2>
+      <h2 className="w-100 my-4">Jeux tendances</h2>
       {games.map((data, index) => <Card key={index} data={data} />)}
     </div>
   );
