@@ -108,7 +108,7 @@ export class CommandesService {
     return this.stripe.checkout.sessions.create(
       {
         mode: 'payment',
-        success_url: 'http://localhost:4200/',
+        success_url: 'http://localhost:3001/',
         line_items: lineItems,
         custom_fields: [{
           "key": "nom",
